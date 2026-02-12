@@ -51,13 +51,13 @@ Each role gets a different dashboard interface.
 ---
 
 ## Application Screenshots
-![Pathology Lab](1.jpeg)
-![Pharmacy](2.jpeg)
-![Nursing Station](3.jpeg)
-![Patient Portal](8.jpeg)
-![Patient Consultation](7.jpeg)
-![Patient Consultation-2](6.jpeg)
-![Doctor Portal](5.jpeg)
+![Pathology Lab](images/1.jpeg)
+![Pharmacy](images/2.jpeg)
+![Nursing Station](images/3.jpeg)
+![Patient Portal](images/8.jpeg)
+![Patient Consultation](images/7.jpeg)
+![Patient Consultation-2](images/6.jpeg)
+![Doctor Portal](images/5.jpeg)
 
 
 
