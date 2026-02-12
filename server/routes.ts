@@ -144,27 +144,18 @@ export async function registerRoutes(
     const input = api.prescriptions.update.input.parse(req.body);
     const updated = await storage.updatePrescription(Number(req.params.id), input);
     
-    // Check if any medicine was marked unavailable or dispensed
-    if (input.medicines) {
-      const unavailableMedicines = input.medicines.filter(m => m.unavailable);
-      if (unavailableMedicines.length > 0) {
+    // If status changed to dispensed
+    if (input.status === 'dispensed') {
+      const p = await storage.getPrescriptions(); // Not efficient but simple for now
+      const target = p.find(px => px.id === Number(req.params.id));
+      if (target) {
         await storage.createTimelineEvent({
-          patientId: updated.patientId,
-          title: "Medicine Unavailable",
-          description: `The following medicines are unavailable: ${unavailableMedicines.map(m => m.name).join(', ')}`,
+          patientId: target.patientId,
+          title: "Medicine Dispensed",
+          description: "Pharmacy has dispensed the medicine",
           type: "pharmacy"
         });
       }
-    }
-
-    // If status changed to dispensed
-    if (input.status === 'dispensed') {
-      await storage.createTimelineEvent({
-        patientId: updated.patientId,
-        title: "Medicine Dispensed",
-        description: "Pharmacy has dispensed the medicine",
-        type: "pharmacy"
-      });
     }
 
     res.json(updated);
