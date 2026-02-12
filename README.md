@@ -5,6 +5,7 @@ A role-based hospital workflow web application that centralizes patient records 
 This project focuses on **patient-centric clinical workflow visibility**, not full hospital management.
 
 ---
+![Dashboard](images/4.jpeg)
 
 ## Problem
 
@@ -48,6 +49,17 @@ The application starts with a **role selection screen**:
 Each role gets a different dashboard interface.
 
 ---
+
+## Application Screenshots
+![Pathology Lab](images/1.jpeg)
+![Pharmacy](images/2.jpeg)
+![Nursing Station](images/3.jpeg)
+![Patient Portal](images/8.jpeg)
+![Patient Consultation](images/7.jpeg)
+![Patient Consultation-2](images/6.jpeg)
+![Doctor Portal](images/5.jpeg)
+
+
 
 ## Patient Record Structure
 
